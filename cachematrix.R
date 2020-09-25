@@ -27,11 +27,11 @@ cacheSolve <- function(mat, ...) {
   #I<-diag(1,nrow=dim(mat$get())[1], ncol=dim(mat$get())[2])
   
   #Check if null
-  if(!is.null(i) ){#  && dim(mat$get())[1]==dim(i)[1] && sameSquareMatrix(mat$get()%*%i,I)){
+  if(!is.null(i) ){
     message("getting cached data")
     return(i)
   }
-  #if inv null then better real calculate it
+  #if inv null then better calculate it
   data<-mat$get()
   i<-solve(data,...)
   mat$setinv(i)
